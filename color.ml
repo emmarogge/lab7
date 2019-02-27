@@ -24,7 +24,7 @@ let to_color (r : int) (g : int) (b : int) : color =
 
 (* red c -- Returns the red channel value for the color c *)
 let red (c : color) : int =
-  match c with
+  match c with 
   | (r, _g, _b) -> r ;;
 
 (* green c -- Returns the green channel value for the color c *)

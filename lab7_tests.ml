@@ -54,10 +54,24 @@ let test_int_list_stack_module () =
 
 
 (*Part IV Unit Tests*)
+(* open Lab7_part4 ;;
+let test_poly_abstract_stack_module () =
+	let title = "PART 4" in
+	Printf.printf "========\n";
+	Printf.printf "%s \n" title;
+	Printf.printf "========\n";
+	let open Stack in
+	let s = empty in
+	let s' = push 7 s in
+	unit_test(push 7 s = s');; *)
+
+
+
 
 let test_all () = 
 	test_math_module () ;
 	test_color_module () ;
 	test_int_list_stack_module ();;
+	(* test_poly_abstract_stack_module () ;; *)
 
 let _ = test_all ();;

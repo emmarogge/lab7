@@ -6,7 +6,7 @@ type color_name =
   
 val to_color : int -> int -> int -> color ;;
                                       
-val red : color -> int ;;
+val red: color -> int ;;
 val green: color -> int ;;
 val blue: color -> int ;;
   
