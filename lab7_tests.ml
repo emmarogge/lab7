@@ -38,11 +38,26 @@ let test_int_list_stack_module () =
 	Printf.printf "========\n";
 	let open IntListStack in
 	let s = [] in
-	unit_test((empty) = s) "empty";;
+	unit_test((empty) = s) "empty";
+	unit_test((push 7 s) = [7]) "push first" ;
+	let s = [7] in
+	unit_test((push 3 s) = [3;7]) "push next" ;
+	let s = [7;4;5] in
+	unit_test((top s) = 7) "top";
+	unit_test((pop s) = [4;5]) "pop";
+	unit_test(small_stack () = [1;5]) "small_stack";
+	unit_test(last_el = 1) "last_el";
+	unit_test(invert_stack (small_stack ()) = [5;1]) "invert_stack";
+	unit_test(bad_el = 5) "bad_el";
+	let s = (SafeIntListStack.push 1 (SafeIntListStack.push 5 (SafeIntListStack.empty))) in 
+	unit_test((safe_stack ()) = s) "safe_stack";;
+
 
 (*Part IV Unit Tests*)
 
-let test_all () = test_math_module () ;
-	test_color_module ();;
+let test_all () = 
+	test_math_module () ;
+	test_color_module () ;
+	test_int_list_stack_module ();;
 
 let _ = test_all ();;
